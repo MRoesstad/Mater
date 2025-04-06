@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+cosypose_live/__init__.py
+cosypose_live/webcam_subscriber.py
+cosypose_live.egg-info/PKG-INFO
+cosypose_live.egg-info/SOURCES.txt
+cosypose_live.egg-info/dependency_links.txt
+cosypose_live.egg-info/entry_points.txt
+cosypose_live.egg-info/requires.txt
+cosypose_live.egg-info/top_level.txt
+cosypose_live.egg-info/zip-safe
+resource/cosypose_live

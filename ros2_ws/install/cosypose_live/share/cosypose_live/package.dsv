@@ -1,0 +1,9 @@
+source;share/cosypose_live/hook/pythonpath.ps1
+source;share/cosypose_live/hook/pythonpath.dsv
+source;share/cosypose_live/hook/pythonpath.sh
+source;share/cosypose_live/hook/ament_prefix_path.ps1
+source;share/cosypose_live/hook/ament_prefix_path.dsv
+source;share/cosypose_live/hook/ament_prefix_path.sh
+source;../../build/cosypose_live/share/cosypose_live/hook/pythonpath_develop.ps1
+source;../../build/cosypose_live/share/cosypose_live/hook/pythonpath_develop.dsv
+source;../../build/cosypose_live/share/cosypose_live/hook/pythonpath_develop.sh

@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating cosypose_live.egg-info
+writing cosypose_live.egg-info/PKG-INFO
+writing dependency_links to cosypose_live.egg-info/dependency_links.txt
+writing entry points to cosypose_live.egg-info/entry_points.txt
+writing requirements to cosypose_live.egg-info/requires.txt
+writing top-level names to cosypose_live.egg-info/top_level.txt
+writing manifest file 'cosypose_live.egg-info/SOURCES.txt'
+reading manifest file 'cosypose_live.egg-info/SOURCES.txt'
+writing manifest file 'cosypose_live.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/magnus/ros2_ws/install/cosypose_live/lib/python3.10/site-packages/cosypose-live.egg-link (link to .)
+
+Installed /home/magnus/ros2_ws/build/cosypose_live
+running symlink_data
+creating /home/magnus/ros2_ws/install/cosypose_live/share/ament_index
+creating /home/magnus/ros2_ws/install/cosypose_live/share/ament_index/resource_index
+creating /home/magnus/ros2_ws/install/cosypose_live/share/ament_index/resource_index/packages
+symbolically linking /home/magnus/ros2_ws/build/cosypose_live/resource/cosypose_live -> /home/magnus/ros2_ws/install/cosypose_live/share/ament_index/resource_index/packages
+symbolically linking /home/magnus/ros2_ws/build/cosypose_live/package.xml -> /home/magnus/ros2_ws/install/cosypose_live/share/cosypose_live

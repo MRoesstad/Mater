@@ -1,0 +1,1 @@
+/home/magnus/ros2_ws/src/cosypose_live/setup.py

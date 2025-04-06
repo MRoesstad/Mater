@@ -1,0 +1,23 @@
+[0.464s] Invoking command in '/home/magnus/ros2_ws/build/cosypose_live': PYTHONPATH=/home/magnus/ros2_ws/build/cosypose_live/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/magnus/ros2_ws/install/cosypose_live/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/magnus/ros2_ws/build/cosypose_live/build --no-deps symlink_data
+[0.595s] running develop
+[0.664s] running egg_info
+[0.664s] creating cosypose_live.egg-info
+[0.664s] writing cosypose_live.egg-info/PKG-INFO
+[0.664s] writing dependency_links to cosypose_live.egg-info/dependency_links.txt
+[0.665s] writing entry points to cosypose_live.egg-info/entry_points.txt
+[0.665s] writing requirements to cosypose_live.egg-info/requires.txt
+[0.665s] writing top-level names to cosypose_live.egg-info/top_level.txt
+[0.665s] writing manifest file 'cosypose_live.egg-info/SOURCES.txt'
+[0.666s] reading manifest file 'cosypose_live.egg-info/SOURCES.txt'
+[0.666s] writing manifest file 'cosypose_live.egg-info/SOURCES.txt'
+[0.667s] running build_ext
+[0.668s] Creating /home/magnus/ros2_ws/install/cosypose_live/lib/python3.10/site-packages/cosypose-live.egg-link (link to .)
+[0.668s] 
+[0.668s] Installed /home/magnus/ros2_ws/build/cosypose_live
+[0.668s] running symlink_data
+[0.668s] creating /home/magnus/ros2_ws/install/cosypose_live/share/ament_index
+[0.668s] creating /home/magnus/ros2_ws/install/cosypose_live/share/ament_index/resource_index
+[0.668s] creating /home/magnus/ros2_ws/install/cosypose_live/share/ament_index/resource_index/packages
+[0.668s] symbolically linking /home/magnus/ros2_ws/build/cosypose_live/resource/cosypose_live -> /home/magnus/ros2_ws/install/cosypose_live/share/ament_index/resource_index/packages
+[0.669s] symbolically linking /home/magnus/ros2_ws/build/cosypose_live/package.xml -> /home/magnus/ros2_ws/install/cosypose_live/share/cosypose_live
+[0.702s] Invoked command in '/home/magnus/ros2_ws/build/cosypose_live' returned '0': PYTHONPATH=/home/magnus/ros2_ws/build/cosypose_live/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/magnus/ros2_ws/install/cosypose_live/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/magnus/ros2_ws/build/cosypose_live/build --no-deps symlink_data

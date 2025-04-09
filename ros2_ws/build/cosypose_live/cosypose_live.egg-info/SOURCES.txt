@@ -2,6 +2,8 @@ package.xml
 setup.cfg
 setup.py
 cosypose_live/__init__.py
+cosypose_live/detection_node.py
+cosypose_live/webcam_publisher.py
 cosypose_live/webcam_subscriber.py
 cosypose_live.egg-info/PKG-INFO
 cosypose_live.egg-info/SOURCES.txt
@@ -10,4 +12,8 @@ cosypose_live.egg-info/entry_points.txt
 cosypose_live.egg-info/requires.txt
 cosypose_live.egg-info/top_level.txt
 cosypose_live.egg-info/zip-safe
+cosypose_live/utils/__init__.py
+cosypose_live/utils/camera.py
+cosypose_live/utils/image_conversion.py
+cosypose_live/utils/predictor.py
 resource/cosypose_live

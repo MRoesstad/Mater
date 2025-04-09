@@ -1,9 +1,11 @@
 {
     "python.autoComplete.extraPaths": [
+        "/home/magnus/Mater/ros2_ws/install/cosypose_live/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
     ],
     "python.analysis.extraPaths": [
+        "/home/magnus/Mater/ros2_ws/install/cosypose_live/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
     ]

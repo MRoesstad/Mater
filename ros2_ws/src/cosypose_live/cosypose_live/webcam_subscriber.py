@@ -7,37 +7,35 @@ from cv_bridge import CvBridge
 import cv2
 
 
-class WebcamSubscriber(Node):
+class WebcamViewer(Node):
     def __init__(self):
-        super().__init__('webcam_subscriber')
-        self.publisher_ = self.create_publisher(Image, 'webcam/image_raw', 10)
+        super().__init__('webcam_viewer')
+        self.subscription = self.create_subscription(
+            Image,
+            '/webcam/image_raw',
+            self.listener_callback,
+            10
+        )
         self.bridge = CvBridge()
-        self.timer = self.create_timer(0.03, self.timer_callback)  # ~30 FPS
-        self.cap = cv2.VideoCapture(0)
+        self.get_logger().info("Subscribed to /webcam/image_raw")
 
-        if not self.cap.isOpened():
-            self.get_logger().error('Could not open webcam.')
-        else:
-            self.get_logger().info('Webcam successfully opened.')
-
-    def timer_callback(self):
-        ret, frame = self.cap.read()
-        if not ret:
-            self.get_logger().warning('Failed to grab frame from webcam.')
-            return
-
-        msg = self.bridge.cv2_to_imgmsg(frame, encoding='bgr8')
-        self.publisher_.publish(msg)
-        self.get_logger().debug('Published image frame')
+    def listener_callback(self, msg):
+        try:
+            frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
+            #bgr8 - color image with blue-green-red color order 
+            cv2.imshow('Webcam Live Feed', frame)
+            cv2.waitKey(1)
+        except Exception as e:
+            self.get_logger().error(f"Could not convert image: {e}")
 
     def destroy_node(self):
-        self.cap.release()
+        cv2.destroyAllWindows()
         super().destroy_node()
 
 
 def main(args=None):
     rclpy.init(args=args)
-    node = WebcamSubscriber()
+    node = WebcamViewer()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:

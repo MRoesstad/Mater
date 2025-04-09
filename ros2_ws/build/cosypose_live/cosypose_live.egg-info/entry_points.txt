@@ -1,3 +1,5 @@
 [console_scripts]
-
+detection = cosypose_live.detection_node:main
+vision = cosypose_live.webcam_subscriber:main
+webcam = cosypose_live.webcam_publisher:main
 

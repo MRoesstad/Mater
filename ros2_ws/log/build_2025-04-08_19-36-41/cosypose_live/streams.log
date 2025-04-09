@@ -1,0 +1,26 @@
+[0.373s] Invoking command in '/home/magnus/Mater/ros2_ws/build/cosypose_live': CONDA_PROMPT_MODIFIER=(ros2pose) PYTHONPATH=/home/magnus/Mater/ros2_ws/build/cosypose_live/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/magnus/Mater/ros2_ws/install/cosypose_live/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/magnus/Mater/ros2_ws/build/cosypose_live/build --no-deps symlink_data
+[0.510s] running develop
+[0.587s] running egg_info
+[0.587s] creating cosypose_live.egg-info
+[0.587s] writing cosypose_live.egg-info/PKG-INFO
+[0.588s] writing dependency_links to cosypose_live.egg-info/dependency_links.txt
+[0.588s] writing entry points to cosypose_live.egg-info/entry_points.txt
+[0.588s] writing requirements to cosypose_live.egg-info/requires.txt
+[0.588s] writing top-level names to cosypose_live.egg-info/top_level.txt
+[0.588s] writing manifest file 'cosypose_live.egg-info/SOURCES.txt'
+[0.589s] reading manifest file 'cosypose_live.egg-info/SOURCES.txt'
+[0.590s] writing manifest file 'cosypose_live.egg-info/SOURCES.txt'
+[0.591s] running build_ext
+[0.591s] Creating /home/magnus/Mater/ros2_ws/install/cosypose_live/lib/python3.10/site-packages/cosypose-live.egg-link (link to .)
+[0.591s] Installing detection script to /home/magnus/Mater/ros2_ws/install/cosypose_live/lib/cosypose_live
+[0.591s] Installing vision script to /home/magnus/Mater/ros2_ws/install/cosypose_live/lib/cosypose_live
+[0.591s] Installing webcam script to /home/magnus/Mater/ros2_ws/install/cosypose_live/lib/cosypose_live
+[0.592s] 
+[0.592s] Installed /home/magnus/Mater/ros2_ws/build/cosypose_live
+[0.592s] running symlink_data
+[0.592s] creating /home/magnus/Mater/ros2_ws/install/cosypose_live/share/ament_index
+[0.592s] creating /home/magnus/Mater/ros2_ws/install/cosypose_live/share/ament_index/resource_index
+[0.592s] creating /home/magnus/Mater/ros2_ws/install/cosypose_live/share/ament_index/resource_index/packages
+[0.592s] symbolically linking /home/magnus/Mater/ros2_ws/build/cosypose_live/resource/cosypose_live -> /home/magnus/Mater/ros2_ws/install/cosypose_live/share/ament_index/resource_index/packages
+[0.592s] symbolically linking /home/magnus/Mater/ros2_ws/build/cosypose_live/package.xml -> /home/magnus/Mater/ros2_ws/install/cosypose_live/share/cosypose_live
+[0.626s] Invoked command in '/home/magnus/Mater/ros2_ws/build/cosypose_live' returned '0': CONDA_PROMPT_MODIFIER=(ros2pose) PYTHONPATH=/home/magnus/Mater/ros2_ws/build/cosypose_live/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/magnus/Mater/ros2_ws/install/cosypose_live/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/magnus/Mater/ros2_ws/build/cosypose_live/build --no-deps symlink_data

@@ -16,13 +16,17 @@ Then converts each frame to a ROS sensor_msgs/Images using CVBridge. Here it pub
 
 If you are unsure of which channel your camera is you can test with
 ```
-ros2 run cosypose_live something
+ros2 run cosypose_live vision
 ```
 This node subscribes to the webcam and then livestreams it.
 
 To activate the node that perfomrs the actual 6D pose estimation using cosypose use the command:
 ```
 ros2 run cosypose_live pose
+```
+or
+```
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 python ~/Mater/ros2_ws/src/cosypose_live/cosypose_live/detection_node.py
 ```
 It subscribes to image_raw and converts each ROS image back to a
 numpy opencv image. It then creates a camera intrinsics matrix and feed the image and intrinsics to your rigidobjectpredictor.

@@ -1,0 +1,5 @@
+datasets:
+  - name: my_custom_bop
+    path: /home/magnus/blenderproc_ws/my_custom_bop
+    split: train_pbr
+    camera_type: perspective

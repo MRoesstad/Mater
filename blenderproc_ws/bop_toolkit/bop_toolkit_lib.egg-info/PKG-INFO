@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: bop_toolkit_lib
+Version: 0.1.0
+Summary: A Python toolkit of the BOP benchmark for 6D object pose estimation (http://bop.felk.cvut.cz).
+Author: Tomas Hodan, Martin Sundermeyer
+License: MIT license
+Requires-Python: <=3.12,>=3.8
+License-File: LICENSE
+Requires-Dist: numpy<2.0.0
+Requires-Dist: pillow<=9.5.0,>=8.2.0
+Requires-Dist: pypng>=0.20220715.0
+Requires-Dist: pytz>=2025.2
+Requires-Dist: webdataset>=0.2.100
+Requires-Dist: pycocotools@ git+https://github.com/MartinSmeyer/cocoapi.git#subdirectory=PythonAPI
+Requires-Dist: pyopengl>=3.1.9
+Requires-Dist: imageio>=2.35.1
+Requires-Dist: matplotlib>=3.7.5
+Requires-Dist: scikit-image>=0.21.0
+Requires-Dist: scipy>=1.10.1
+Requires-Dist: vispy>=0.14.2
+Provides-Extra: eval-gpu
+Requires-Dist: torch; extra == "eval-gpu"
+Provides-Extra: eval-hot3d
+Requires-Dist: hand_tracking_toolkit@ git+https://github.com/facebookresearch/hand_tracking_toolkit ; extra == "eval-hot3d"
+Provides-Extra: scripts
+Requires-Dist: open3d>=0.19.0; extra == "scripts"
+Requires-Dist: opencv-python>=4.11.0.86; extra == "scripts"
+Dynamic: license-file

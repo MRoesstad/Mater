@@ -1,6 +1,6 @@
 # Dataset Creation 
-This workspace is created for dataset creation. It utelises BlenderProc and bop_toolkit. All you need make it work is suplying a ply file. From there the generate_json.py will create a json file.
-This script looks for specific object name. ojb_000001, obj_000002 ... Therefore remember to change the name of the ply files. In addition to this change the amount of objects you are using in dataset_params.py in bop_toolkit. The required dataset should have a structure similar to:
+This workspace is created for dataset creation. It utilises BlenderProc and bop_toolkit. All you need to make it work is to supply a ply file. From there, the generate_json.py will create a JSON file.
+This script looks for a specific object name. ojb_000001, obj_000002 ... Therefore, remember to change the name of the ply files. In addition to this change, the number of objects you are using in dataset_params.py in the bop_toolkit. The required dataset should have a structure similar to:
 ```
 my_dataset/
 ├── models/
@@ -34,22 +34,27 @@ my_dataset/
 
 
 ## Environment
-The environment is created for a Linux machine and can be found and is created using the command:
+The environment is created for a Linux machine and can be found and created using the command:
 ```
 conda env create -f blenderproc_env.yml
 ```
+Then 
+```
+cd bop_toolkit
+pip install -e .
+```
 
 ## Commands 
-Run render_bop_scenes.py from terminal with the command:
+Run render_bop_scenes.py from the terminal with the command:
 (Just adjust the paths, and which model you want to train)
 
 ```
 blenderproc run render_bop_scenes.py  /home/magnus/blenderproc_ws/my_custom_bop/models   /home/magnus/blenderproc_ws/my_custom_bop   --object_name obj_000001   --scenes_per_object 1 --views_per_scene 20
 
 ```
-This scripts generates camera.json, scene_gt.json, scene_camera.json depth and rgb folder. However to get a complete dataset do we need to utelise bop_toolkit aswell. Presented in this workspace is a modified version for bot_toolkit for enabeling custom datasets.
+This script generates camera.json, scene_gt.json, scene_camera.json, depth and rgb folders. However, to get a complete dataset, do we need to utilise bop_toolkit as well? This workspace presents a modified version of bot_toolkit for enabling custom datasets.
 
-Before utelising bop_toolkit run (NB! adjust it based on your path):
+Before utilising bop_toolkit run (NB! adjust it based on your path):
 ```
 touch /home/magnus/blenderproc_ws/my_custom_bop/test_targets_bop19.json
 echo "[]" > /home/magnus/blenderproc_ws/my_custom_bop/test_targets_bop19.json

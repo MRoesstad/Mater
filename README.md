@@ -12,7 +12,14 @@ git clone --recurse-submodules https://github.com/Simple-Robotics/cosypose.git
 To deal with the environment dilemma, I opted to use micromamba. Which is a standalone version of Conda, better suited to create an environment with different packages.
 Documentation can be found at: https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html 
 
-## How to use it 
+Installing Mater files with:
+```
+git clone https://github.com/MRoesstad/Mater.git
+```
+## Dataset creation
+A guide on to implemt and create datasat can be found in the README under Blenderproc_ws
+
+## How activate the pipeline
 Activate the webcame subscriber with the command:
 ```
 ros2 run cosypose_live webcam

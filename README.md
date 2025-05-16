@@ -2,8 +2,15 @@
 
 This complete pipeline utelises CosyPose to recieve 6D pose for a custom object. 
 
+## Warning 
+This version of CosyPose is modified to be CPU only. If you want to train a model using CosyPose it is recomended using the unmoded version:
+```
+git clone --recurse-submodules https://github.com/Simple-Robotics/cosypose.git
+```
+
 ## Installation guide 
-Multiple points here 
+To deal with the environment dilemma, I opted to use micromamba. Which is a standalone version of Conda, better suited to create an environment with different packages.
+Documentation can be found at: https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html 
 
 ## How to use it 
 Activate the webcame subscriber with the command:
@@ -31,3 +38,4 @@ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 python ~/Mater/ros2_ws/src/c
 It subscribes to image_raw and converts each ROS image back to a
 numpy opencv image. It then creates a camera intrinsics matrix and feed the image and intrinsics to your rigidobjectpredictor.
 Finally it logs the 6D poses to the terminal.
+

@@ -18,7 +18,6 @@ parser.add_argument("--start_view_id", type=int, default=0, help="Global view st
 parser.add_argument("--total_views", type=int, required=True, help="Total number of views across all chunks")
 args = parser.parse_args()
 
-
 # Load category IDs from models_info.json
 models_info_path = os.path.join(os.path.dirname(args.model_dir), "models_info.json")
 with open(models_info_path, 'r') as f:
@@ -53,28 +52,23 @@ for i in range(args.scenes_per_object):
             print(f"[Warning] Failed to tweak shader for {obj.get_name()}: {e}")
 
     
-    # Replaced walls with black background
+    # Setting black background
     bpy.data.worlds['World'].use_nodes = False
     bpy.data.worlds['World'].color = (0.0, 0.0, 0.0)
-
-
     
-    # Adding some Ambient light to create shadow
+    # Adding ambient light to create shadow, might need to tweeked
     ambient_light = bproc.types.Light()
     ambient_light.set_type("POINT")
     ambient_light.set_location([5, 5, 5])
-    ambient_light.set_energy(4)
+    ambient_light.set_energy(4) #Change this value
 
-
-    # Set camera intrinsics
+    #camera intrinsic, normal intrinsics gathered from BOP
     bproc.camera.set_resolution(640, 480)
     bproc.camera.set_intrinsics_from_K_matrix(
         K=np.array([[600, 0, 320], [0, 600, 240], [0, 0, 1]]),
         image_width=640,
         image_height=480
     )
-
-    # Place object in mid air
     obj.set_location([0.0, 0.0, 0.0])
    #obj.set_rotation_euler(bproc.sampler.uniformSO3())
 
@@ -90,10 +84,10 @@ for i in range(args.scenes_per_object):
     global_end = args.start_view_id + args.views_per_scene
 
     for global_i in range(global_start, global_end):
-        theta = np.pi * global_i / (args.total_views - 1)           # elevation: 0 to pi
-        phi = 2 * np.pi * global_i / args.total_views               # azimuth: 0 to 2pi
+        theta = np.pi * global_i / (args.total_views - 1)  
+        phi = 2 * np.pi * global_i / args.total_views               
 
-        # Convert to cartesian coordinates
+        #cartesian coordinates
         x = radius * np.sin(theta) * np.cos(phi)
         y = radius * np.sin(theta) * np.sin(phi)
         z = radius * np.cos(theta)
@@ -104,7 +98,7 @@ for i in range(args.scenes_per_object):
         cam2world = bproc.math.build_transformation_mat(cam_location, rot_matrix)
         bproc.camera.add_camera_pose(cam2world)
 
-        # Add a light near the camera
+        # Add a light near the camera (backside) which follows
         light = bproc.types.Light()
         light.set_type("POINT")
         light.set_energy(8)
@@ -114,11 +108,11 @@ for i in range(args.scenes_per_object):
 
 
 
-    # Enable rendering
+    # rendering
     bproc.renderer.enable_depth_output(activate_antialiasing=False)
     data = bproc.renderer.render()
 
-    # Want to reduce the max depth to solve issues with depth maps.
+    # Reduce the max depth. Done to solve for depth maps, might be a better solution
     max_depth = 1.5  # This is something to tweek on, if you are using large objects.
     clipped_depths = [np.clip(d, 0, max_depth) for d in data["depth"]]
 
@@ -147,7 +141,7 @@ for i in range(args.scenes_per_object):
     )
     
 
-    # Fix for folder structure 
+    #fix folder structure 
     inner_scene_dir = os.path.join(scene_dir, 'train_pbr', '000000')
     for item in os.listdir(inner_scene_dir):
         s = os.path.join(inner_scene_dir, item)
@@ -156,13 +150,10 @@ for i in range(args.scenes_per_object):
 
     
     shutil.rmtree(os.path.join(scene_dir, 'train_pbr'))
- 
     camera_src = os.path.join(scene_dir, 'camera.json')
     camera_dst = os.path.join(train_pbr_root, 'camera.json')
-
     if os.path.exists(camera_src) and not os.path.exists(camera_dst):
         shutil.move(camera_src, camera_dst)
-
     elif os.path.exists(camera_src):
         os.remove(camera_src)
 

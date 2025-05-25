@@ -53,6 +53,11 @@ blenderproc run render_bop_scenes.py  /home/magnus/blenderproc_ws/my_custom_bop/
 
 ```
 This script generates camera.json, scene_gt.json, scene_camera.json, depth and rgb folders. However, to get a complete dataset, do we need to utilise bop_toolkit as well? This workspace presents a modified version of bot_toolkit for enabling custom datasets.
+To create test dataset use the command:
+```
+blenderproc run generate_test.py   /home/magnus/Mater/blenderproc_ws/my_custom_bop/models   /home/magnus/Mater/blenderproc_ws/my_custom_bop   --object_name obj_000001   --total_views 20   --distractor_dir /home/magnus/Downloads/tless_models/models_cad
+
+```
 
 Before utilising bop_toolkit run (NB! adjust it based on your path):
 ```

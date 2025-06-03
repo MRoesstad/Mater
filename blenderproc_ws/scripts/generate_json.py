@@ -4,27 +4,25 @@ import trimesh
 
 models_dir = r"C:\Users\magnu\OneDrive\Documents\Skole\Master\blenderproc_ws\my_custom_bop\models"
 output_path = os.path.join(os.path.dirname(models_dir), "models_info.json")
-
 model_info = {}
+
 for filename in os.listdir(models_dir):
     if filename.endswith(".ply") and filename.startswith("obj_"):
         try:
             obj_id = int(filename.split("_")[-1].split(".")[0])
         except ValueError:
-            print(f"⚠️ Skipping {filename}: invalid object ID")
+            print(f"Skipping {filename}: invalid object ID")
             continue
 
         mesh_path = os.path.join(models_dir, filename)
         mesh = trimesh.load_mesh(mesh_path)
-
         bbox = mesh.bounding_box.bounds
         size = mesh.extents
 
-        # Try oriented bounding box for diameter; fallback to bounding box diagonal
+        # Try oriented bounding box for diameter
         try:
             diameter = mesh.bounding_box_oriented.primitive.extents.max()
         except:
-            print(f"⚠️ Fallback to AABB for diameter of object {obj_id}")
             diameter = float((size**2).sum()**0.5)  # Euclidean norm of extents
 
         model_info[obj_id] = {
@@ -42,4 +40,4 @@ for filename in os.listdir(models_dir):
 with open(output_path, 'w') as f:
     json.dump(model_info, f, indent=4)
 
-print(f"✅ models_info.json created at: {output_path}")
+print(f"models_info.json created at: {output_path}")
